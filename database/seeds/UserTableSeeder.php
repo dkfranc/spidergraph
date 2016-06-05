@@ -22,10 +22,19 @@ class UserTableSeeder extends Seeder
         ]);
 
         \App\User::create([
-            'name' => 'Test User',
+            'name' => 'John Doe',
             'username' => 'test_user',
             'email' => 'user@user.com',
             'password' => bcrypt('user'),
+            'confirmed' => 1,
+            'confirmation_code' => md5(microtime() . env('APP_KEY')),
+        ]);
+		
+		\App\User::create([
+            'name' => 'Brian',
+            'username' => 'brian',
+            'email' => 'brian@user.com',
+            'password' => bcrypt('brian'),
             'confirmed' => 1,
             'confirmation_code' => md5(microtime() . env('APP_KEY')),
         ]);

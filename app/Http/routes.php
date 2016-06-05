@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*Route::get('show', 'SpiderGraphController@welcome');
+
+Route::get('draw', 'SpiderGraphController@draw');
+
+Route::get('graph', 'SurveyController@draw');*/
+
+Route::get('/', 'SurveyController@draw');
