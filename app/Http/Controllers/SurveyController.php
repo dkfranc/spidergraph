@@ -54,6 +54,7 @@ WHERE `SQ`.`survey_id` = (SELECT `SU`.`id` FROM `survey` AS `SU`)'));
 		foreach($userColl as $ukey=>$value){
 			$colourArr = array("rgba(179,181,198,0.2)", "rgba(134,194,75,0.2)", "rgba(0,255,0,0.2)");
 			$fillcolor = array("rgba(134,195,74,0.5)","rgba(0,150,136,0.5)","rgba(123,170,202,0.5)");
+			$highlight_fillcolor = array("rgba(134,195,74,1)","rgba(0,150,136,1)","rgba(123,170,202,1)");
 			$strokecolor = array("rgba(134,195,74,1)","rgba(0,150,136,1)","rgba(123,170,202,1)");
 			$labelsArr = $sgraphDatasetArr = array();
 			
@@ -76,6 +77,7 @@ WHERE `SQ`.`survey_id` = (SELECT `SU`.`id` FROM `survey` AS `SU`)'));
 									'pointBorderColor'=>"#fff",
 									'pointHoverBackgroundColor'=>"#fff",
 									'pointHoverBorderColor'=>"rgba(179,181,198,1)",
+									'pointHighlightFill'=> $highlight_fillcolor[$ukey],
 									'fillColor' => $fillcolor[$ukey],
 									'strokeColor' => $strokecolor[$ukey],
 									'data'=>$ansdata);
