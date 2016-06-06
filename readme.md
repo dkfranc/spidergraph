@@ -8,4 +8,4 @@ php artisan migrate
 
 ##To populate data on tables
 
-php artisn db:seed
+php artisan db:seed
