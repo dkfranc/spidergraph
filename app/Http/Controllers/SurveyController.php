@@ -8,47 +8,13 @@ use Illuminate\Support\Collection;
 
 class SurveyController extends Controller
 {
-	/**
-     * Show a list of all available flights.
-     *
-     * @return Response
-     */
-    /*public function index()
-    {
-        $survey = Survey::all();
-
-        return view('survey.index', ['survey' => $survey, 'name' => 'test']);
-    }*/
-
 	public function draw()
-	{
-		/*$labels = DB::select('SELECT q.question FROM Questions q');
-
-		$test = DB::select('SELECT a.answer, a.created_by FROM Answers a where a.question_id in (select q.id from Questions q where q.survey_name = (select s.survey_name from Survey s)) ');
-
-		$answersColl = collect($test);	
-		$groupedByOwner = $answersColl->groupBy('created_by')->implode('answer', ', ');
-		
-
-		//return compact($labels, $answers);
-		return $groupedByOwner;*/
-		
-		/*$survey = Survey::all();
-        return view('survey', ['survey' => $survey, 'name' => 'test']);*/
-		
-		//db query to get all questions
+	{		
 		$labels = DB::select('SELECT `SQ`.`question`, `SQ`.`id` FROM `survey_questions` AS `SQ`');
-
-		//db query to get all answers for a particular survey
-		//$answersColl = collect(DB::select('SELECT `SA`.`answer`, `SA`.`survey_quest_id` FROM `survey_answers` AS `SA` where `SA`.`survey_quest_id` in (select `SQ`.`id` from `survey_questions` AS `SQ` where `SQ`.`survey_id` = (select `SU`.`id` from `survey` AS `SU`))'));
-		
+	
 		$questColl = collect(DB::select('SELECT GROUP_CONCAT(`SQ`.`id`) AS `qid` FROM `survey_questions` AS `SQ` 
 WHERE `SQ`.`survey_id` = (SELECT `SU`.`id` FROM `survey` AS `SU`)'));
 
-		//Group answers by created_by column
-		//$groupedByOwner = $answersColl->groupBy('`SQ`.`id`');
-		//dd($questColl);	
-		
 		$userColl = collect(DB::select('SELECT `id`,`name` from `users` where `admin` != 1'));
 		
 		foreach($userColl as $ukey=>$value){
@@ -84,12 +50,9 @@ WHERE `SQ`.`survey_id` = (SELECT `SU`.`id` FROM `survey` AS `SU`)'));
 				unset($ansdata);				
 			}
 		}		
-		//dd($sgraphDataset);
 
 		$viewData = array('labels'=>$labelsArr, 'datasets'=>$sgraphDataset);			
 		return view('survey', ['labels'=>$labelsArr, 'datasets'=>$sgraphDataset]);
-		//return $viewData;
-
 	}
 	
 }

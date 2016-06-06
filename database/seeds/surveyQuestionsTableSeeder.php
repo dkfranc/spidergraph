@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class surveyQuestionsTableSeeder extends Seeder
+class SurveyQuestionsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
