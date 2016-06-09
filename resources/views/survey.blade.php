@@ -16,6 +16,7 @@
 	<script src="{{ URL::asset('js/build/production.min.js') }}"></script>
 	<script>
 		//radar chart data
+		//console.log(<?php echo json_encode($datasets); ?>);
 		var data = {
 			
 		    labels: <?php echo json_encode($labels); ?>,
@@ -33,5 +34,6 @@
 		var myChart = new Chart(ctx).Radar(data, options);
 		document.getElementById('legend').innerHTML = myChart.generateLegend();
 	</script>
+    <?php //print_r(json_encode($viewdata['datasets'])); ?>
 </body>
 </html>
