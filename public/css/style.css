@@ -15,16 +15,16 @@ input, button {
 	-webkit-appearance:none;
 }
 h1 {
-	font-size: 30px;
+	font-size: 36px;
 	font-weight: normal;
 	letter-spacing: 1px;
-	line-height: 36px;
-	padding-bottom: 50px;
+	line-height: 40px;
+	padding-bottom: 30px;
 	text-transform: uppercase;
 }
 /* Common CSS */
 body {
-	background-color:#22313f;
+	background-color:rgba(93,121,67,1);
 	color: #fff;
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 	font-size: 14px;
@@ -35,6 +35,9 @@ body {
 }
 
 /* Site CSS */
+header {
+	padding:25px 15px 0px;
+}
 .container {
 	margin: 0 auto;
 	padding-left:15px;
@@ -44,7 +47,7 @@ body {
 }
 .graph-container {
 	padding-top: 50px;
-	padding-bottom: 50px;
+	padding-bottom: 30px;
 }
 #chartHolder {
 	margin: 0 auto;
@@ -52,7 +55,7 @@ body {
 	position: relative;
 }
 /* Chart legend */
-#legend {position: absolute; right: -100px; top:20px; font-size: 16px; text-align: left;}
+#legend {position: absolute; right: -100px; top:0px; font-size: 16px; text-align: left;}
 .radar-legend span {display: inline-block; margin-right: 10px; width: 15px; height: 15px; position: relative; top: 2px; border-radius: 2px;}
 .radar-legend li {margin-bottom: 5px;}
 

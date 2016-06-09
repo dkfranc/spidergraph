@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
 </head>
 <body>
+	<header class="text-center"><img src="{{ URL::asset('images/logo.png') }}" alt="" width="180" /></header>
 	<div class="container graph-container text-center">
 		<h1>Survey Results</h1>
 		<div id="chartHolder"><canvas id="myChart" width="440" height="440"></canvas><div id="legend"></div></div>
