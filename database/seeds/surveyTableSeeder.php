@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class surveyTableSeeder extends Seeder
+class SurveyTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,7 +16,7 @@ class surveyTableSeeder extends Seeder
             'user_id' => '1',
             'title' => 'Habbits',
             'slug' => 'habbits',
-            'description' => 'Survey to get all user habbits like drinking, swimming etc',
+            'description' => 'Survey to get all user habits like drinking, swimming etc',
             'status' => 1,
         ]);
     }
