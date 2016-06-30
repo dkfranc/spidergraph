@@ -17,6 +17,12 @@
                         <span class="title">{{ trans('admin::admin.partials-sidebar-roles') }}</span>
                     </a>
                 </li>
+                <li @if(Request::path() == 'surveys') class="active" @endif>
+                    <a href="{{ url('surveys') }}">
+                        <i class="fa fa-gavel"></i>
+                        <span class="title">{{ trans('admin::admin.partials-sidebar-surveys') }}</span>
+                    </a>
+                </li>
             @endif
             <li>
                 <a href="{{ url('logout') }}">

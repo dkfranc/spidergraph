@@ -12,7 +12,7 @@ return [
     'partials-sidebar-menu'                 => 'Menu',
     'partials-sidebar-users'                => 'Users',
     'partials-sidebar-roles'                => 'Roles',
-    'partials-sidebar-user-actions'         => 'User actions',
+    'partials-sidebar-surveys'              => 'Surveys',
     'partials-sidebar-logout'               => 'Logout',
 
     // partials-topbar
@@ -48,6 +48,17 @@ return [
     'users-index-delete'                    => 'Delete',
     'users-index-are_you_sure'              => 'Are you sure?',
     'users-index-no_entries_found'          => 'No entries found',
+
+
+    // survey-index
+    'survey-index-add_new'                   => 'Add new',
+    'survey-index-survey_list'               => 'Survey lists',
+    'survey-index-title'                     => 'Title',
+    'survey-index-desc'                      => 'Description',
+    'survey-index-edit'                      => 'Edit',
+    'survey-index-delete'                    => 'Delete',
+    'survey-index-are_you_sure'              => 'Are you sure?',
+    'survey-index-no_entries_found'          => 'No entries found',
 
     // users-controller
     'users-controller-successfully_created' => 'User was successfully created!',

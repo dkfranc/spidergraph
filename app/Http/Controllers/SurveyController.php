@@ -9,16 +9,36 @@ use Illuminate\Support\Collection;
 class SurveyController extends Controller
 {
 	/**
+     * @var Role
+     */
+    protected $roles;
+
+    public function __construct(Survey $survey)
+    {
+        $this->survey = $survey;
+    }
+
+	/**
      * Show a list of all available flights.
      *
      * @return Response
      */
-    /*public function index()
+    public function index()
     {
-        $survey = Survey::all();
+        $surveys = $this->survey->get();
 
-        return view('survey.index', ['survey' => $survey, 'name' => 'test']);
-    }*/
+        return view('admin.survey.index', compact('surveys'));
+    }
+
+    
+    /**
+     * Show a page of survey creation
+     * @return \Illuminate\View\View
+     */
+    public function create()
+    {
+        return view('admin.survey.create');
+    }
 
 	public function draw()
 	{
@@ -49,14 +69,14 @@ WHERE `SQ`.`survey_id` = (SELECT `SU`.`id` FROM `survey` AS `SU`)'));
 		//$groupedByOwner = $answersColl->groupBy('`SQ`.`id`');
 		//dd($questColl);	
 		
-		$userColl = collect(DB::select('SELECT `id`,`name` from `users` where `admin` != 1'));
-		
+		$userColl = collect(DB::select('SELECT `id`,`name` from `users` where `role_id` != 1'));
+		$labelsArr = $sgraphDataset = array();
 		foreach($userColl as $ukey=>$value){
 			$colourArr = array("rgba(179,181,198,0.2)", "rgba(134,194,75,0.2)", "rgba(0,255,0,0.2)");
 			$fillcolor = array("rgba(114,224,13,0.5)","rgba(191,202,182,0.5)","rgba(194,114,201,0.5)");
 			$highlight_fillcolor = array("rgba(114,224,13,1)","rgba(191,202,182,1)","rgba(194,114,201,1)");
 			$strokecolor = array("rgba(114,224,13,1)","rgba(191,202,182,1)","rgba(194,114,201,1)");
-			$labelsArr = $sgraphDatasetArr = array();
+			
 			
 			foreach ($labels as $k=> $lab) {
 				array_push($labelsArr, $lab->question);

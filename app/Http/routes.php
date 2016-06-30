@@ -29,6 +29,7 @@ Route::group([
     ], function () {
         Route::resource('users', 'UsersController');
         Route::resource('roles', 'RolesController');
+        Route::resource('surveys', 'SurveyController');
     });
     // Authentication routes...
     Route::get('login', 'Auth\AuthController@getLogin');
